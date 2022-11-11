@@ -37,10 +37,10 @@
                                             </g>
                                         </svg> </span>
                                     <span class="kt-widget17__subtitle">
-                                        Total Berita
+                                        Total Blog
                                     </span>
                                     <span class="kt-widget17__desc">
-                                        {!!$posts!!} Berita
+                                        {!!$posts!!} Blog
                                     </span>
                                 </div>
                                 <div class="kt-widget17__item">

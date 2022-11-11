@@ -28,14 +28,14 @@
                         d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z"
                         id="Combined-Shape" fill="#000000" />
                 </g>
-            </svg></span><span class="kt-menu__link-text">Berita</span><i
+            </svg></span><span class="kt-menu__link-text">Blog</span><i
             class="kt-menu__ver-arrow la la-angle-right"></i></a>
     <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
         <ul class="kt-menu__subnav">
             <li class="kt-menu__item {{ CMS::set_active('berita.index') }} {{ CMS::set_active('berita.edit') }}"
                 aria-haspopup="true"><a href="{{ route('berita.index') }}" class="kt-menu__link "><i
                         class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                        class="kt-menu__link-text">Semua Berita</span></a></li>
+                        class="kt-menu__link-text">Semua Blog</span></a></li>
             <li class="kt-menu__item {{ CMS::set_active('berita.create') }}" aria-haspopup="true"><a
                     href="{{ route('berita.create') }}" class="kt-menu__link "><i
                         class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
@@ -111,7 +111,7 @@
         </ul>
     </div>
 </li>
-        
+
 <li class="kt-menu__item  kt-menu__item--submenu {{ CMS::set_open('users') }}" aria-haspopup="true"
     data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span
             class="kt-menu__link-icon">
