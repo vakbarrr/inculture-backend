@@ -111,7 +111,7 @@
         </ul>
     </div>
 </li>
-
+        
 <li class="kt-menu__item  kt-menu__item--submenu {{ CMS::set_open('users') }}" aria-haspopup="true"
     data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span
             class="kt-menu__link-icon">
