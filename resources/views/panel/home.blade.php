@@ -156,15 +156,15 @@
                 required: !0
             }
         },
-        errorPlacement: function(e, r) {
+        errorPlacement: function (e, r) {
             var i = r.closest(".input-group");
             i.length ? i.after(e.addClass("invalid-feedback")) : r.after(e.addClass("invalid-feedback"));
         },
-        invalidHandler: function(e, r) {
+        invalidHandler: function (e, r) {
             KTUtil.scrollTop();
         }
     });
-    $(document).on('submit', '#f_quickdraft', function(e) {
+    $(document).on('submit', '#f_quickdraft', function (e) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -172,29 +172,30 @@
         var content = $('#draft_content').val();
         if (title != "") {
             axios({
-                url:"{{route('berita.quickDraft')}}",
-                data:{
-                    'title': title,
-                    'content': content,
-                    '_token': '{{csrf_token()}}'
-                },
-                method:'post',
-                
-            })
-            .then(response => {
-                if (response.data.status == 1) {
-                    toastr.success(response.data.message, "Success");
-                    $('#draft_title').val("");
-                    $('#draft_content').val("");
-                    $('#kategori_berita').select2('val', '');
-                } else {
-                    toastr.error(response.data.message, "Failed");
-                }
-            })
-            .catch(error => {
-                toastr.error(error, "Failed");
-            })
+                    url: "{{route('berita.quickDraft')}}",
+                    data: {
+                        'title': title,
+                        'content': content,
+                        '_token': '{{csrf_token()}}'
+                    },
+                    method: 'post',
+
+                })
+                .then(response => {
+                    if (response.data.status == 1) {
+                        toastr.success(response.data.message, "Success");
+                        $('#draft_title').val("");
+                        $('#draft_content').val("");
+                        $('#kategori_berita').select2('val', '');
+                    } else {
+                        toastr.error(response.data.message, "Failed");
+                    }
+                })
+                .catch(error => {
+                    toastr.error(error, "Failed");
+                })
         }
     });
+
 </script>
 @endpush

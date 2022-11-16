@@ -28,14 +28,14 @@
                     <div class="alert alert-secondary" role="alert">
                         <div class="alert-icon"><i class="flaticon-edit kt-font-brand"></i></div>
                         <div class="alert-text">
-                            Edit Berita
+                            Edit blog
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <input class="form-control" type="text" value="{{ $data->title }}" id="judul" name="title"
-                        placeholder="Judul Berita">
+                        placeholder="Judul blog">
                 </div>
 
                 <div class="form-group">

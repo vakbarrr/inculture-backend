@@ -13,7 +13,7 @@
                 <i class="kt-font-brand flaticon2-checking"></i>
             </span>
             <h3 class="kt-portlet__head-title">
-                List Berita
+                List Blog
             </h3>
         </div>
     </div>
@@ -24,10 +24,10 @@
                     <th>Judul</th>
                     <th>Kategori</th>
                     <th>Tag</th>
-                    <th style="text-align:center">Penulis</th>
-                    <th style="text-align:center">Status</th>
-                    <th style="text-align:center">Dilihat</th>
-                    <th style="text-align:center">Actions</th>
+                    <th style="text-align:'center'">Penulis</th>
+                    <th style="text-align:'center'">Status</th>
+                    <th style="text-align:'center'">Dilihat</th>
+                    <th style="text-align:'center'">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,8 +52,9 @@
                             @csrf
                         </form>
                         <a class="btn btn-success btn-icon" type="button"
-                            href="{{ route('home.showPost',['id'=>$item->id,'post'=>$item->slug]) }}" target="_blank"><i
+                            href="" target="_blank"><i
                                 class="fa fa-share"></i></a>
+                                {{-- {{ route('home.showPost',['id'=>$item->id,'post'=>$item->slug]) }} --}}
                     </td>
                 </tr>
                 @endforeach
@@ -80,8 +81,8 @@
         e.stopImmediatePropagation();
         var $modal = $('#modal-normal');
         var valueberita = $(this).attr('id-berita');
-        $modal.find(".modal-title").html("Hapus Berita");
-        $modal.find(".modal-body").html("Apakah Anda Yakin Ingin menghapus berita ini?");
+        $modal.find(".modal-title").html("Hapus blog");
+        $modal.find(".modal-body").html("Apakah Anda Yakin Ingin menghapus blog ini?");
         $modal.find(".modal-footer").html(
             '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary yeshapusberita" valueid="' +
             valueberita + '">OK</button>');

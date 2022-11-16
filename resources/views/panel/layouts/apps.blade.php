@@ -115,10 +115,14 @@
                         <div id="kt_header_menu"
                             class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
                             <ul class="kt-menu__nav ">
+                                {{-- <li class="kt-menu__item  kt-menu__item--open kt-menu__item--here kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open kt-menu__item--here" --}}
+                                    {{-- data-ktmenu-submenu-toggle="click" aria-haspopup="true"><span --}}
+                                        {{-- class="kt-menu__link-text">{{ CMS::getRouteName() }}</span> --}}
+                                {{-- </li> --}}
                                 <li class="kt-menu__item  kt-menu__item--open kt-menu__item--here kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open kt-menu__item--here"
-                                    data-ktmenu-submenu-toggle="click" aria-haspopup="true"><span
-                                        class="kt-menu__link-text">{{ CMS::getRouteName() }}</span>
-                                </li>
+                                data-ktmenu-submenu-toggle="click" aria-haspopup="true"><span
+                                    class="kt-menu__link-text">Dashboard</span>
+                            </li>
                             </ul>
                         </div>
                     </div>

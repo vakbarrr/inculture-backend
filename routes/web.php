@@ -1,9 +1,22 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HalamanController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LayoutController;
+use App\Http\Controllers\MediaController;
+use App\Http\Controllers\PdfController;
+use App\Http\Controllers\PesanController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\SliderController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\UsersController;
+use App\Models\Tag;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,40 +36,35 @@ Route::get('/', function () {
 Auth::routes();
 Route::group(['prefix' => 'panelroom'], function () {
     Route::get('/', [DashboardController::class, 'index']);
-    Route::post('berita/addTags', 'BeritaController@addTags')->name('berita.addTags');
+    Route::resource('berita', BeritaController::class);
+    Route::post('berita/addTags', [BeritaController::class, 'addTags'])->name('berita.addTags');
 
-    Route::post('quickdraft', 'BeritaController@quickDraft')->name('berita.quickDraft');
+    Route::post('quickdraft', [BeritaController::class, 'quickDrafts'])->name('berita.quickDraft');
 
-    Route::resource('berita', 'BeritaController');
-    Route::resource('kategori', 'KategoriController');
-    Route::resource('tag', 'TagController');
-    Route::resource('halaman', 'HalamanController');
+    Route::resource('kategori', KategoriController::class);
+    Route::resource('tag', TagController::class);
+    Route::resource('halaman', HalamanController::class);
 
     Route::get('media/modal', 'MediaController@modalshow')->name('media.modal');
     Route::get('media/modal-gallery', 'MediaController@modalShowGallery')->name('media.modal_gallery');
     Route::match(['post', 'patch'], 'media/ajaxstore', 'MediaController@ajaxStore')->name('media.ajaxstore');
-    Route::resource('media', 'MediaController');
+    Route::resource('media', MediaController::class);
 
     Route::get('pdf/modal', 'PdfController@modalshow')->name('pdf.modal');
     Route::post('pdf/ajaxstore', 'PdfController@ajaxStore')->name('pdf.ajaxstore');
-    Route::resource('pdf', 'PdfController');
+    Route::resource('pdf', PdfController::class);
 
-    Route::resource('menu', 'LayoutController');
+    Route::resource('menu', LayoutController::class);
 
     Route::post('dmenu/reorder', 'MenuController@reOrder')->name('dmenu.reorder');
     Route::resource('dmenu', 'MenuController');
 
-    Route::get('agenda/getAgenda', 'AgendaController@getAgenda');
-    Route::resource('agenda', 'AgendaController');
+    Route::resource('slider', SliderController::class);
+    Route::resource('users', UsersController::class);
+    Route::resource('pesan', PesanController::class);
 
-    Route::resource('slider', 'SliderController');
-    Route::resource('users', 'UsersController');
-    Route::resource('pengumuman', 'PengumumanController');
-    Route::resource('pesan', 'PesanController');
-    Route::resource('gallery', 'GalleryController');
-    Route::resource('iklan', 'IklanController');
     Route::delete('setting/deleted', [SettingController::class, 'deleted'])->name('setting.deleted');
-    Route::resource('setting', 'App\Http\Controllers\SettingController');
+    Route::resource('setting', SettingController::class);
 });
 Route::get('/panelroom',  [DashboardController::class, 'index'])->name('dashboard');
 

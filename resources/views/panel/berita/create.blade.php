@@ -23,13 +23,13 @@
                     <div class="alert alert-secondary" role="alert">
                         <div class="alert-icon"><i class="flaticon-add kt-font-brand"></i></div>
                         <div class="alert-text">
-                            Tambah Berita
+                            Tambah Blog
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <input class="form-control" type="text" value="" id="judul" name="title" placeholder="Judul Berita"
+                    <input class="form-control" type="text" value="" id="judul" name="title" placeholder="Judul Blog"
                         required>
                 </div>
 

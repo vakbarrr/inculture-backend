@@ -1,12 +1,12 @@
 @extends('panel.layouts.apps')
 @include('panel.tag.submenu')
 @section('content')
+@if(session()->has('message'))
+<div class="alert alert-success mb-3">
+    {{ session()->get('message') }}
+</div>
+@endif
 <div class="kt-portlet kt-portlet--mobile">
-    @if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
-    </div>
-    @endif
     <div class="kt-portlet__head kt-portlet__head--lg">
         <div class="kt-portlet__head-label">
             <span class="kt-portlet__head-icon">
@@ -17,7 +17,7 @@
             </h3>
         </div>
     </div>
-    <div class="kt-portlet__body">
+    <div class="kt-portlet__body mt-2">
 
         <table class="table table-striped" id="t_menu">
             <thead>
