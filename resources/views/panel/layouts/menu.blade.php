@@ -147,7 +147,7 @@
             <li class="kt-menu__item {{ CMS::setActive('setting') }}" aria-haspopup="true">
                 <a href="{!! route('setting.index') !!}" class="kt-menu__link "><i
                         class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                        class="kt-menu__link-text">Genral setting</span></a></li>
+                        class="kt-menu__link-text">General setting</span></a></li>
         </ul>
     </div>
 </li>
